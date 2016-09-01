@@ -1,0 +1,53 @@
+<html>
+  <head>
+  <title>My Now Amazing Webpage</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="assets/css/dist/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/dist/slick-theme.css"/>
+  </head>
+  <body>
+
+  <div class="filtering">
+    <div><img class="img-column img-responsive" src="assets/image/img_aside_author.jpg" alt=""></div>
+    <div><img class="img-column img-responsive" src="assets/image/img_aside_author.jpg" alt=""></div>
+    <div><img class="img-column img-responsive" src="assets/image/img_aside_author.jpg" alt=""></div>
+    <div><img class="img-column img-responsive" src="assets/image/img_aside_author.jpg" alt=""></div>
+    <div><img class="img-column img-responsive" src="assets/image/img_aside_author.jpg" alt=""></div>
+    <div><img class="img-column img-responsive" src="assets/image/img_aside_author.jpg" alt=""></div>
+    <div><img class="img-column img-responsive" src="assets/image/img_aside_author.jpg" alt=""></div>
+    <div><img class="img-column img-responsive" src="assets/image/img_aside_author.jpg" alt=""></div>
+    <div><img class="img-column img-responsive" src="assets/image/img_aside_author.jpg" alt=""></div>
+  </div>
+
+
+  <script src="assets/js/respond.js"></script>
+  <script src="assets/js/jquery-1.11.3.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/slick.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+     
+$('.filtering').slick({
+  slidesToShow: 4,
+  slidesToScroll: 4
+});
+
+var filtered = false;
+
+$('.js-filter').on('click', function(){
+  if (filtered === false) {
+    $('.filtering').slick('slickFilter',':even');
+    $(this).text('Unfilter Slides');
+    filtered = true;
+  } else {
+    $('.filtering').slick('slickUnfilter');
+    $(this).text('Filter Slides');
+    filtered = false;
+  }
+});
+  
+    });
+  </script>
+
+  </body>
+</html>
